@@ -127,13 +127,14 @@ function updateAuthenticator(d){
 function updateNewMessage(d, local){
     var body = d.body, senderID = d.from;
     var newEntry = $('<tr>').prependTo('#history');
+		var myDate = new Date();
     newEntry.append(
 		$('<td>').addClass('author').append(
         $('<span>').addClass((local?'author-local':'author-remote'))
             .append($('<span>').text('['))
             .append($('<span>').attr('data-socket-id', senderID))
             .append($('<span>').text(']'))
-						.append($('<p>').addClass('time').text((new Date()).toLocaleTimeString()))
+						.append($('<p>').addClass('time').text(myDate.getHours() + ":" + myDate.getMinutes() + ":" + myDate.getSeconds()))
 		)
     );
     //newEntry.append($('<span>').text('说: '));
