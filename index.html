@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>即时会话(加密)</title>
+        <meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1" />
+        <link rel="stylesheet" href="./bootstrap.min.css" />
+        <link rel="stylesheet" href="./index.css" />
+        <script src="./require.js" data-main="client"></script>
+    </head>
+    <body style="overflow-x:hidden;"><div id="nojs">本应用需要环境支持JavaScript。</div><div class="container-fluid" id="main">
+        <div class="row">
+			<div class="main panel panel-default" name="main" id="chatting">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						会话验证代码
+						<strong id="authenticator"></strong>
+					</h3>
+					<button type="button" class="btn btn-link" id="toggle-setting">设置...</button>
+				</div>
+				<div class="panel-body" style="position: absolute;overflow-y: scroll;width:100%;-webkit-overflow-scrolling: touch;">
+					<form class="form" id="sendbox" onsubmit="return false;">
+						<div style="background-color:#FEF7E4;text-align:center"><button id="toggle-securemode" class="btn btn-link" type="button">切换安全模式</button></div>
+						<div><div class="history-container">
+							<table id="history" class="history-roller"></table>
+						</div></div>
+						
+						
+					</form>
+					<div class="alert alert-info" id="sendbox-cover">
+						正在连接到服务器，请稍候...
+					</div>
+				</div>
+				<div class="panel-foot" style="position:absolute;left:0;bottom:0;width:100%">
+					<div class="col-xs-12 col-sm-12 col-md-12" style="padding: .5em; background-color:#eee">
+						<div class="col-xs-9 col-sm-10 col-md-11" style="padding:0px;">
+							<input id="new-message" class="form-control" placeholder="输入要发送的消息。" />
+						</div>
+						<div class="col-xs-3 col-sm-2 col-md-1" style="padding:0px;text-align:center">
+							<button id="send-message" type="button" class="btn btn-primary">发送</button>
+						</div>
+					</div>
+				</div>
+				<!-- send -->
+			</div>
+			<div class="setting" id="setting">
+				<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">会话信息</h3>
+						<button type="button" class="btn btn-link" id="setting-close">关闭</button>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display: table; width: 100%;">
+                            <label style="display: table-cell">我的ID</label>
+                            <span style="display: table-cell;">
+                                <input id="localid" type="text" class="" style="width: 100%"/>
+                            </span>
+                        </div>
+                        <div style="display: table; width: 100%;margin-top: 14px;">
+                            <label style="display: table-cell">指纹ID</label>
+                            <span style="display: table-cell;">
+                                <input id="localfingerprint" type="text" class="line-input" style="width: 100%" readonly/>
+                            </span>
+                        </div>
+                    </div>
+                    <ul id="members" class="list-group"></ul>
+                </div>
+				<div class="row"><div class="panel panel-default"><div class="panel-body">
+                    <ul>
+                        <li>
+                            您可以修改<strong>我的ID</strong>(即时生效)，将自己喜欢的昵称展示给好友。
+                        </li>
+                        <li>
+                            <strong>指纹</strong>
+                            可用来检查您和对方的密钥一致性。您看到的好友的指纹，应当和好友自己的电脑上显示的指纹相同。
+                            如果不同，则表明有人在试图窃听您和好友之间的连接！
+                        </li>
+                        <li>
+                            <strong>会话验证代码</strong>是一种简化的验证指纹的方法。
+                            如果会话是安全的，各个成员应当看到相同的会话验证代码。
+                        </li>
+                        <li>
+                            使用<strong>屏蔽</strong>功能，可以限定您的发言的范围。
+                            被屏蔽者不能解密您的发言，但是您仍能看到此人的发言。
+                        </li>
+                        <li>
+                            启用<strong>安全模式</strong>，将自动屏蔽新加入的成员。
+                            注意这也将自动屏蔽断线后重连的成员。
+                        </li>
+                    </ul>
+                </div></div></div>
+			</div>
+            
+        </div>
+    </div></body>
+</html>

@@ -1,0 +1,89 @@
+#main{
+    display: none;
+	
+}
+#setting{display: none}
+
+.full-height{
+    max-height: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #FFFF00;
+}
+
+.line-input {
+    padding: 3px;
+    border-width: 0px;
+    /*border-color: #FFAA00;
+    border-style: dashed;*/
+    background-color: #EEEEFF;
+}
+
+.changing{
+    background-color: #FFCC99;
+}
+
+#sendbox textarea{
+    resize: none;
+}
+
+.history-container{
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /*background-color: #000000;*/
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+.history-roller {
+	width: 100%;
+    color: #FFFFFF;
+    font-family: monospace;
+    word-wrap: break-word;
+}
+
+.history-roller td{border-bottom: 1px solid #eee; padding: 0.4em}
+
+.history-roller .time{
+    color: #aaa;
+	margin:0;
+	font-style: italic;
+}
+
+.history-roller .author-local{
+	display: block;
+	padding: .4em;
+    color: #FF9999;
+}
+
+.history-roller .author-remote{
+	display: block;
+    color: #9999FF;
+	padding: 0.2em 0.4em;
+}
+
+.history-roller .text{
+    color: #444;
+	font-weight: bold;
+	line-height: 160%
+}
+
+.author {
+	width: 18%;
+    text-align: right;
+    vertical-align: top;
+}
+.main .panel-heading, .setting .panel-heading{position: relative}
+.main #toggle-setting, .setting #setting-close{position: absolute; right: 15px; top: 0}
+.main .panel-body{padding:0}
+
+#sendbox{
+    display: none;
+}
+.alert{border-radius:0;margin:0;text-align:center;}
+li.blocked{
+    color: #AA0000;
+    text-decoration: line-through;
+}
