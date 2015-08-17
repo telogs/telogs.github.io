@@ -43,7 +43,7 @@ function redrawMemberIDs(){
             // preserve already rendered info. But if this is impossible, which
             // should be rarely so, a 'unknown user' will be rendered.
             if('' != $(this).text()) return;
-            $(this).text('正在获取...');
+            $(this).text('未知用户');
         } else {
             // if we have got member info, we will always try to replace the
             // display with this new update.
