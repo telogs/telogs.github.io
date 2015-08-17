@@ -67,7 +67,9 @@
 .history-roller .text{
     color: #444;
 	font-weight: bold;
-	line-height: 160%
+	line-height: 160%;
+	word-break: break-all;
+	font-size: 1.25em;
 }
 
 .author {
