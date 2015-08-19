@@ -204,7 +204,7 @@ $(function(){
 // ---------- define return function and event handler
 
 var ret = function update(v){
-		alert(v);
+		//alert(v);
     // use this function to update the page with given parameters
     if(undefined !== v.members) updateMembers(v.members);
     if(undefined !== v.localID) updateLocalID(v.localID);
